@@ -4,24 +4,24 @@ import { useParams } from "react-router-dom";
 
 const Countrie = (props) => {
     const params = useParams();
-    const myCountrie = props.countries.find((count)=> count.alpha3Code === params.alpha3Code);
+    const myCountrie = props.countries.find((count)=> count.alpha3Code.toLowerCase() === params.alpha3Code);
     
     return (
 
         <div className="col-7">
             <img src={`https://flagpedia.net/data/flags/icon/72x54/${myCountrie.alpha2Code.toLowerCase()}.png`} alt="country flag" style={{width: "300px"}}/>
-            <h1>{myCountrie.name.official}</h1>
+            <h1>{myCountrie.name.common}</h1>
             <table className="table">
                 <thead></thead>
                 <tbody>
                     <tr>
                         <td style={{width: "30%"}}>Capital</td>
-                        <td>{myCountrie.capital.official}</td>
+                        <td>{myCountrie.capital}</td>
                     </tr>
                     <tr>
                         <td>Area</td>
                         <td>
-                        {myCountrie.area.official} km <sup>2</sup>
+                        {myCountrie.area} km <sup>2</sup>
                         </td>
                     </tr>
                     <tr>

@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import  List from "./components/CountriesList";
-import data from "./countries.json";
+import Data from "./countries.json";
 import './App.css';
 import  Countrie from "./components/CountryDetails";
 
@@ -13,10 +13,10 @@ function App() {
 
       <div className="container">
         <div className="row">
-        <List countries={data} />
+        <List countries={Data} />
         <Routes>
           
-					  <Route path="/:id" element={<Countrie countries={data} />} />
+					  <Route path='/:alpha3Code' element={<Countrie countries={Data} />} />
 		      
         </Routes> 
         </div>
